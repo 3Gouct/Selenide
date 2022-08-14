@@ -3,7 +3,6 @@ package ru.netology.web;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
-
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -14,12 +13,13 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class CardDelivery {
+
     public String generateDate(int days) {
         return LocalDate.now ().plusDays (days).format (DateTimeFormatter.ofPattern ("dd.MM.yyyy"));
     }
-
+    
     @Test
-    void russianLettersAndASpace() {
+    public void russianLettersAndASpace() {
         String planningDate = generateDate (3);
         Configuration.holdBrowserOpen = true;
         open ("http://localhost:9999");
